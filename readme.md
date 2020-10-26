@@ -11,9 +11,9 @@ Qos means `"quality of service"`. It defined whether is message is stable. Diffe
 ### `Pre-preparation`
 It is better to use mqtt first to better understand what it could do for us.
 
-* 1. Install an mqtt broker on your local pc or on your cloud server. [Emqx](https://github.com/emqx/emqx) or [mosquitto](https://github.com/eclipse/mosquitto) are both good choice.
+* 1. Install an mqtt broker on your local pc or on your cloud server. [Emqx](https://github.com/emqx/emqx) or [mosquitto](https://github.com/eclipse/mosquitto) are both good choices.
 
-* 2. And then you could install `mosquitto-clients` (`sudo apt install mosquitto-clients` on ubuntu) to test the communication between `subscriber` and `publisher`. If you want to develop some demos by yourself there is a [project](https://github.com/FengD/public_libs/tree/master/communication/mqtt) that you could refer.
+* 2. And then you could install `mosquitto-clients` (`sudo apt install mosquitto-clients` on ubuntu) to test the communication between `subscriber mosquitto_sub` and `publisher mosquitto_pub`. If you want to develop some demos by yourself there is a [project](https://github.com/FengD/public_libs/tree/master/communication/mqtt) that you could refer.
 
 ### `Understand qos by wireshark`
 * The qos could be defined both on `sub` and `pub` side. So the different combinations are as below.
@@ -28,7 +28,7 @@ P(QOS2)、S(QOS0)
 P(QOS2)、S(QOS1)
 P(QOS2)、S(QOS2)
 ```
-But as we test, `if( S(QOS) > P(QOS) ) { S(QOS) = P(QOS) ;}`. So actually, there are only 6 combinations.
+But as I test, `if( S(QOS) > P(QOS) ) { S(QOS) = P(QOS) ;}`. So actually, there are only 6 combinations.
 ```
 P(QOS0)、S(QOS0)
 P(QOS1)、S(QOS0)
